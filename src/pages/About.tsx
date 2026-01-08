@@ -60,11 +60,13 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex justify-center"
               >
-                <img
-                  src={logo}
-                  alt="Uzilo Trading Logo"
-                  className="w-80 md:w-96 h-auto bg-background p-10 rounded-2xl shadow-2xl"
-                />
+                <div className="w-80 md:w-96 bg-background p-10 rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
+                  <img
+                    src={logo}
+                    alt="Uzilo Trading Logo"
+                    className="w-full h-auto max-h-full object-contain"
+                  />
+                </div>
               </motion.div>
             </div>
           </div>

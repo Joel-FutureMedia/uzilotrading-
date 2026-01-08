@@ -10,7 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & About */}
           <div className="space-y-4">
-            <img src={logo} alt="Uzilo Trading" className="h-28 w-auto bg-background p-3 rounded-lg" />
+            <div className="h-28 bg-background p-3 rounded-lg flex items-center justify-center overflow-hidden">
+              <img src={logo} alt="Uzilo Trading" className="h-full w-auto object-contain" />
+            </div>
             <p className="text-background/80 text-sm leading-relaxed">
               Namibia's trusted partner in scrap metal recycling and premium charcoal wholesale.
               Where Vision Meets Value.

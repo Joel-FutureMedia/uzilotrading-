@@ -62,7 +62,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <div className="video-box aspect-video bg-foreground/10">
+            <div className="video-box aspect-video bg-foreground/10 rounded-2xl overflow-hidden relative">
               <video
                 key={videos[currentVideo]}
                 src={videos[currentVideo]}
@@ -70,7 +70,7 @@ const HeroSection = () => {
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
               
