@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ArrowRight, Recycle, Truck, Flame } from "lucide-react";
 import video1 from "@/assets/video-1.mp4";
@@ -166,15 +167,16 @@ const HeroSection = () => {
                 <Phone className="w-5 h-5" />
                 Call Now
               </a>
-              <a
-                href="/services"
+              <Link
+                to="/services"
                 className="bg-primary-foreground/10 border-2 border-primary-foreground/30 text-primary-foreground 
                          hover:bg-primary-foreground hover:text-primary font-semibold py-3 px-8 rounded-full 
                          transition-all duration-300 flex items-center gap-2"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 Our Services
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>

@@ -21,7 +21,11 @@ const Header = () => {
       <div className="section-container">
         <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <img src={logo} alt="Uzilo Trading" className="h-16 md:h-20 w-auto" />
           </Link>
 
@@ -31,6 +35,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={`font-heading font-medium transition-colors duration-200 hover:text-primary ${
                   location.pathname === link.href
                     ? "text-primary"
@@ -78,7 +83,10 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   className={`font-heading font-medium py-2 transition-colors duration-200 hover:text-primary ${
                     location.pathname === link.href
                       ? "text-primary"
