@@ -78,32 +78,26 @@ const ProductsPreview = () => {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="rounded-2xl shadow-2xl w-full h-48 bg-background/10 overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.02 }}
-                    src={charcoal1}
-                    alt="African BBQ Charcoal"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="rounded-2xl shadow-2xl w-full h-64 bg-background/10 overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.02 }}
-                    src={charcoal2}
-                    alt="Charcoal Products"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <motion.img
+                  whileHover={{ scale: 1.02 }}
+                  src={charcoal1}
+                  alt="African BBQ Charcoal"
+                  className="rounded-2xl shadow-2xl w-full h-48 object-contain bg-background/10"
+                />
+                <motion.img
+                  whileHover={{ scale: 1.02 }}
+                  src={charcoal2}
+                  alt="Charcoal Products"
+                  className="rounded-2xl shadow-2xl w-full h-64 object-contain bg-background/10"
+                />
               </div>
               <div className="pt-8">
-                <div className="rounded-2xl shadow-2xl w-full h-80 bg-background/10 overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.02 }}
-                    src={charcoal3}
-                    alt="African BBQ Charcoal in use"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <motion.img
+                  whileHover={{ scale: 1.02 }}
+                  src={charcoal3}
+                  alt="African BBQ Charcoal in use"
+                  className="rounded-2xl shadow-2xl w-full h-80 object-contain bg-background/10"
+                />
               </div>
             </div>
 

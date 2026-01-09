@@ -146,26 +146,22 @@ const Services = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="rounded-2xl shadow-xl w-full h-80 bg-muted overflow-hidden">
-                <motion.img
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  src={scrap1}
-                  alt="Scrap metal materials"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-2xl shadow-xl w-full h-80 bg-muted overflow-hidden">
-                <motion.img
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  src={scrap2}
-                  alt="Metal recycling yard"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <motion.img
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                src={scrap1}
+                alt="Scrap metal materials"
+                className="rounded-2xl shadow-xl w-full h-80 object-contain bg-muted"
+              />
+              <motion.img
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                src={scrap2}
+                alt="Metal recycling yard"
+                className="rounded-2xl shadow-xl w-full h-80 object-contain bg-muted"
+              />
             </div>
           </div>
         </section>

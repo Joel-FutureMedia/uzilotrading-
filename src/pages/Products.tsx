@@ -76,15 +76,13 @@ const Products = () => {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative bg-background/10 rounded-2xl p-4 overflow-hidden"
+                className="relative bg-background/10 rounded-2xl p-4"
               >
-                <div className="w-full aspect-[4/3] rounded-2xl shadow-2xl overflow-hidden">
-                  <img
-                    src={charcoal3}
-                    alt="African BBQ Charcoal"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <img
+                  src={charcoal3}
+                  alt="African BBQ Charcoal"
+                  className="rounded-2xl shadow-2xl w-full object-contain"
+                />
                 <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-xl font-bold shadow-lg">
                   Wholesale Only
                 </div>
@@ -151,41 +149,35 @@ const Products = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="rounded-2xl shadow-lg w-full h-64 bg-muted overflow-hidden">
-                <motion.img
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  src={charcoal1}
-                  alt="African BBQ Charcoal Display"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-2xl shadow-lg w-full h-64 bg-muted overflow-hidden">
-                <motion.img
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  whileHover={{ scale: 1.02 }}
-                  src={charcoal2}
-                  alt="Charcoal Products on Shelf"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-2xl shadow-lg w-full h-64 bg-muted overflow-hidden">
-                <motion.img
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  whileHover={{ scale: 1.02 }}
-                  src={charcoal3}
-                  alt="Customer with African BBQ Charcoal"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <motion.img
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                src={charcoal1}
+                alt="African BBQ Charcoal Display"
+                className="rounded-2xl shadow-lg w-full h-64 object-contain bg-muted"
+              />
+              <motion.img
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                src={charcoal2}
+                alt="Charcoal Products on Shelf"
+                className="rounded-2xl shadow-lg w-full h-64 object-contain bg-muted"
+              />
+              <motion.img
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ scale: 1.02 }}
+                src={charcoal3}
+                alt="Customer with African BBQ Charcoal"
+                className="rounded-2xl shadow-lg w-full h-64 object-contain bg-muted"
+              />
             </div>
           </div>
         </section>
