@@ -3,7 +3,7 @@ import { Recycle, Scissors, Truck, Building, Package, Scale, Phone } from "lucid
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import scrap1 from "@/assets/scrap-1.jpg";
-import scrap2 from "@/assets/scrap-2.jpg";
+import ourwok from "@/assets/sliders/ourwok.jpg";
 
 const services = [
   {
@@ -146,22 +146,34 @@ const Services = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <motion.img
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                src={scrap1}
-                alt="Scrap metal materials"
-                className="rounded-2xl shadow-xl w-full h-80 object-contain bg-muted"
-              />
-              <motion.img
+                className="rounded-2xl shadow-xl overflow-hidden bg-muted h-80"
+              >
+                <motion.img
+                  src={scrap1}
+                  alt="Scrap metal materials"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                src={scrap2}
-                alt="Metal recycling yard"
-                className="rounded-2xl shadow-xl w-full h-80 object-contain bg-muted"
-              />
+                className="rounded-2xl shadow-xl overflow-hidden bg-muted h-80"
+              >
+                <motion.img
+                  src={ourwok}
+                  alt="Our work showcase"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
             </div>
           </div>
         </section>

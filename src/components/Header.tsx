@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -12,16 +12,57 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const scrollToHero = () => {
+  const heroSection = document.getElementById("hero");
+  if (heroSection) {
+    heroSection.scrollIntoView({ behavior: "smooth" });
+  } else {
+    scrollToTop();
+  }
+};
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      scrollToHero();
+    } else {
+      navigate("/");
+      // Wait for navigation and page render, then scroll to hero
+      setTimeout(() => {
+        scrollToHero();
+      }, 300);
+    }
+  };
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    // If navigating to a different page, ScrollToTop component will handle it
+    // If clicking the same page link, scroll to top immediately
+    if (location.pathname === href) {
+      scrollToTop();
+    } else {
+      // Small delay to ensure navigation completes, then scroll to top
+      setTimeout(() => {
+        scrollToTop();
+      }, 100);
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="section-container">
         <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2">
             <img src={logo} alt="Uzilo Trading" className="h-16 md:h-20 w-auto" />
           </Link>
 
@@ -31,6 +72,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
+                onClick={() => handleNavClick(link.href)}
                 className={`font-heading font-medium transition-colors duration-200 hover:text-primary ${
                   location.pathname === link.href
                     ? "text-primary"
@@ -78,7 +120,7 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
                   className={`font-heading font-medium py-2 transition-colors duration-200 hover:text-primary ${
                     location.pathname === link.href
                       ? "text-primary"
